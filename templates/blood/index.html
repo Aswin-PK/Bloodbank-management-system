@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <style>
+      *{
+        scroll-behavior: smooth;
+      }
+      .navbar{
+        background-color: rgb(8, 13, 45)!important;
+        box-shadow: 0 2px 5px rgba(3, 5, 24, 0.556);
+      }
+      section{
+        width: 98.9vw;
+        height: 97vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+      }
+      .home{
+        background-color: blue;
+        padding-top: 3em ;
+        background: url("{% static '/image/landingpageimage.jpg' %}") no-repeat;
+        background-size: cover;
+      }
+      .home .container{
+        margin: 0;
+        width: 150%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+        
+      .about{
+        padding-top: 3em ;
+      }
+      .about span{
+        font-size: 3em;
+      }
+      .about p{
+        margin-top: 0.5em;
+        font-size: 1.3em;
+        text-align: justify;
+      }
+      table{
+        width: 70em;
+        height: auto;
+        border-bottom: 1px solid rgb(117, 0, 0);
+      }
+      table tr >*{
+        text-align: center;
+      }
+      table tr:nth-child(1){
+        background-color: rgb(255, 159, 159);
+        height: 2.5em;
+      }
+      table tr:nth-child(3){
+        background-color: rgb(255, 192, 192);
+      }
+      table tr:nth-child(2n){
+        background-color: rgb(255, 233, 233);
+      }
+      footer{
+        width: 100%;
+        height: 13em;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      footer .footercontainer{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      footer .footercontainer > *{
+        margin: 0 5em;
+        color: #ffffff77;
+      }
+      footer a{
+        text-decoration: none;
+        color: inherit;
+      }
+      </style>
+      
+</head>
+
+
+<body>
+  {% include "blood/navbar.html" %}
+<br>
+  <section class="home" id="home">
+  </section>
+  <section class="about" id="about">
+    <div class="container">
+      <div class="heading"><center><span>About Blood Donation</span></center></div>
+      <div class="subdetails">
+        <p style="font-size: 1.5em;">Donating blood is a simple and safe procedure that can save lives. Blood donors can be anyone who is in good health, aged between 18 and 65 years, and meets the eligibility criteria set by the blood bank. The donated blood is tested for various diseases and screened for compatibility before it can be used for transfusions.</p>
+        <p>"&nbsp;Every two seconds, someone in the world needs blood. That means that a constant and steady supply of blood is crucial to saving lives&nbsp;"</p>
+        <p>One unit of donated blood can save up to three lives</p>
+        <table>
+          <tr>
+            <th colspan="3">Who can donate to whom</th>
+          </tr>
+            <th colspan="3"></th>
+          </tr>
+          <tr>
+            <th>Blood Group</th>
+            <th>Donate To</th>
+            <th>Receive From</th>
+          </tr>
+          <tr>
+            <td>A+</td>
+            <td>A+ , AB+</td>
+            <td>A+, A-, O+, O-</td>
+          </tr>
+          <tr>
+            <td>O+</td>
+            <td>O+, A+, B+, AB+</td>
+            <td>O+, O-</td>
+          </tr>
+          <tr>
+            <td>B+</td>
+            <td>B+, AB+</td>
+            <td>B+, B-, O+, O-</td>
+          </tr>
+          <tr>
+            <td>AB+</td>
+            <td>AB+</td>
+            <td>Everyone</td>
+          </tr>
+          <tr>
+            <td>A-</td>
+            <td>A+, A-, AB+, AB-</td>
+            <td>A_, O-</td>
+          </tr>
+          <tr>
+            <td>O-</td>
+            <td>Everyone</td>
+            <td>O-</td>
+          </tr>
+          <tr>
+            <td>B-</td>
+            <td>B+, B-, AB+, AB-</td>
+            <td>B-, O-</td>
+          </tr>
+          <tr>
+            <td>AB-</td>
+            <td>AB+, AB-</td>
+            <td>AB-, A-, B-, O-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+  <footer style="margin-top: 2rem;">
+    <div class="footercontainer">
+      <div class="donor">
+        <h4>Want to donate blood ?</h4>
+        <ul>
+          <li><a class="nav-link"href="/donor/donorlogin">Donor Login</a></li>
+          <li><a href="/donor/donorsignup">New user? Register</a></li>
+        </ul>
+      </div>
+      <div class="patient">
+        <h4>Looking for blood ?</h4>
+        <ul>
+          <li><a class="nav-link"href="/patient/patientlogin">Patient Login</a></li>
+          <li><a href="/patient/patientsignup">New user? Register</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#home" class="link">Home</a></li>
+          <li><a href="#about"class="link">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

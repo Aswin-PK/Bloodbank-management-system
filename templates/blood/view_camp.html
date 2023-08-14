@@ -1,0 +1,45 @@
+{% extends 'blood/adminbase.html' %}
+{% block content %}
+{% load widget_tweaks %}
+{%load static%}
+
+<br><br>
+<div class="container">
+    <H4 class="text-center">CAMP DETAILS</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="headings">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Camp Name</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Address</th>
+                <th scope="col">Pincode</th>
+                <th scope="col">Conducted By</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Time</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in camps %}
+            <tr>
+                <td> {{t.get_name}}</td>
+                <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                <td>{{t.bloodgroup}}</td>
+                <td>{{t.address}}</td>
+                <td>{{t.mobile}}</td>
+                
+                <td class="text-right">
+                    <button class="btn badge-pill" style="width: 80px;background-color: yellow;"><a  style="text-decoration: none;color: white;" href="{% url 'update-donor' t.id  %}">EDIT</a> </button>
+                    <button class="btn badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href="{% url 'delete-donor' t.id  %}">DELETE</a> </button>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    
+    </table>
+</div>
+
+{% endblock content %}
+
